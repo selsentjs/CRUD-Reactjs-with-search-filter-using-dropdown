@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-const Table = ({ data }) => {
+const Table = ({ data, deleteData, handleEdit, handleView }) => {
   return (
     <div>
       <table>
@@ -28,9 +29,13 @@ const Table = ({ data }) => {
                     <td>{item.gender}</td>
                     <td>{item.status}</td>
                     <td>
-                      <button>Edit</button>
-                      <button>Delete</button>
-                      <button>View</button>
+                      <button onClick={() => handleEdit(item.id)}>Edit</button>
+                      <button onClick={() => deleteData(item.id)}>
+                        Delete
+                      </button>
+                      <NavLink to={`/view/${item.id}`}>
+                        <button onClick={() => handleView(item)}>View</button>
+                      </NavLink>
                     </td>
                   </tr>
                 </>

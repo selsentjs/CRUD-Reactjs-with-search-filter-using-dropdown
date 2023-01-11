@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import Form from "./components/Form";
-import Table from "./components/Table";
-import Data from "./components/Data";
+import MainFile from './components/MainFile';
 
 function App() {
-  const [data, setData] = useState(Data);
+  
   return (
     <div className="App">
-      <Form data={data} setData={setData} />
-      <br />
-      <br />
-      <Table data={data} setData={setData} />
+    <MainFile />
+    
     </div>
   );
 }

@@ -1,29 +1,22 @@
-import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
+import React from "react";
 
-const Form = ({ data, setData }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [gender, setGender] = useState("");
-  const [status, setStatus] = useState("");
-
+const Form = ({
+  name,
+  setName,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  gender,
+  setGender,
+  status,
+  setStatus,
+  addNewData,
+  isEdit,
+  updateData
+}) => {
   const submitForm = (e) => {
     e.preventDefault();
-  };
-
-  // add button
-
-  const addNewData = () => {
-    const newData = {
-      id: uuid(),
-      name,
-      email,
-      phone,
-      gender,
-      status,
-    };
-    setData([...data, newData]);
   };
 
   return (
@@ -92,7 +85,11 @@ const Form = ({ data, setData }) => {
         </select>
         <br />
         <br />
-        <button onClick={addNewData}>Add Form</button>
+        {isEdit ? (
+          <button onClick={updateData}>Update Data</button>
+        ) : (
+          <button onClick={addNewData}>Add Data</button>
+        )}
       </form>
     </div>
   );

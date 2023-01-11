@@ -9,8 +9,8 @@ const Data = [
   },
   {
     id: 2,
-    name: "Ragavarshini",
-    email: "raga@gmail.com",
+    name: "Deepa",
+    email: "deepa@gmail.com",
     phone: "9876789876",
     gender: "Female",
     status: "Inactive",
