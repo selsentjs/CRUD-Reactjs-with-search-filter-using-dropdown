@@ -3,13 +3,13 @@
 }
 
 table {
-  width: 80%;
-  margin-left:10rem;
+  width: 70%;
+
   border-collapse: collapse;
 }
 td,
 th {
   border: 1px solid blueviolet;
-  padding:8px;
+  padding: 8px;
   text-align: left;
 }
