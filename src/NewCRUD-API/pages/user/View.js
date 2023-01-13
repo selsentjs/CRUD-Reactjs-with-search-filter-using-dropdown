@@ -7,6 +7,8 @@ const View = () => {
 
   const { id } = useParams();
 
+  // ============= get single user ====================================
+
   useEffect(() => {
     getSingleUser();
   },[]);
@@ -16,6 +18,7 @@ const View = () => {
     setUser(response.data);
   
   };
+  //=============================================================================
 
   return (
     <div className="container">

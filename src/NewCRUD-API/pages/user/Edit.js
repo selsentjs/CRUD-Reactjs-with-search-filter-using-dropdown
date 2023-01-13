@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { NavLink, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 const Edit = ({
   data,
@@ -17,6 +17,8 @@ const Edit = ({
 
   const { id } = useParams();
 
+  // ============ get single user ==================================================
+
   useEffect(() => {
     getSingleUser();
   }, []);
@@ -28,7 +30,7 @@ const Edit = ({
     setEmail(response.data.email);
   };
 
-  // update user
+  //===================== update user=======================================
   const updateUser = async () => {
     const response = await axios.put(`http://localhost:5000/data/${id}`, {
       name,
@@ -38,6 +40,7 @@ const Edit = ({
     navigate("/");
     setData(response.data);
   };
+  //============================================================================
   return (
     <div>
       <div className="container">
